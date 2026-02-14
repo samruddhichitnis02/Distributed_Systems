@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1-Samruddhi Chitnis</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: url('blog_background.jpg') center center / cover no-repeat fixed;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 18px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            color: #8b5a3c;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #c87d5e;
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #8b5a3c;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .helper-text {
+            display: block;
+            font-size: 0.8rem;
+            color: #92400e;
+            margin-top: 0.35rem;
+            font-style: italic;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #f4d1c9;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: #ffffff;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #78716c;
+            font-weight: 400;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #d4927d;
+            box-shadow: 0 0 0 3px rgba(212, 146, 125, 0.15);
+            transform: translateY(-1px);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 180px;
+            background: #fef5f2;
+            line-height: 1.6;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4927d' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 40px;
+        }
+
+        select option {
+            background-color: #ffffff;
+            color: #8b5a3c;
+            padding: 10px;
+        }
+
+        select option:hover {
+            background-color: #fef3f0;
+            color: #8b5a3c;
+        }
+
+        select option:checked {
+            background-color: #d4927d;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 1rem;
+            background: #fef3f0;
+            border-radius: 10px;
+            margin-bottom: 1.75rem;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #d4927d;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            cursor: pointer;
+            color: #8b5a3c;
+            font-size: 0.9rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #d4927d 0%, #c87d5e 100%);
+            color: white;
+            border: none;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 146, 125, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(212, 146, 125, 0.4);
+            background: linear-gradient(135deg, #c87d5e 0%, #b76856 100%);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button::before {
+            content: "🌊";
+            font-size: 1.2em;
+        }
+
+        .required {
+            color: #f97316;
+            font-weight: 700;
+        }
+
+        /* Floating label animation effect */
+        .form-group {
+            position: relative;
+        }
+
+        /* Divider between sections */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #f4d1c9, transparent);
+            margin: 2rem 0;
+        }
+
+        /* Success animation for visual feedback */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: slideIn 0.5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Question 2: Heading tag with biggest font size (h1) -->
+        <h1>Create Your Blog Post ✨</h1>
+        <p class="subtitle">Share your story with the world</p>
+
+        <!-- Question 3: Form for the blog -->
+        <form id="blogForm">
+            <!-- Question 3a: Blog title input with placeholder, required, and autofocus -->
+            <div class="form-group">
+                <label for="blogTitle">Blog Title <span class="required">*</span></label>
+                <input type="text" id="blogTitle" name="blogTitle" placeholder="Enter the title of your blog" required
+                    autofocus>
+                <span class="helper-text">Make it catchy but clear</span>
+            </div>
+
+            <!-- Question 3b: Author name inputs  -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="authorName">Author Name <span class="required">*</span></label>
+                    <input type="text" id="authorName" name="authorName" placeholder="Enter your name" required>
+                    <span class="helper-text">Your creative identity</span>
+                </div>
+            
+                <!-- Question 3c: Author email inputs  -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="helper-text">We'll keep it safe</span>
+                </div>
+            </div>
+
+            <!-- Question 3e: Dropdown for category selection -->
+            <div class="form-group">
+                <label for="category">Category <span class="required">*</span></label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Lifestyle">Lifestyle</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Education">Education</option>
+                </select>
+                <span class="helper-text">Choose what fits best</span>
+            </div>
+
+            <!-- Question 3d: Text area for blog content with placeholder and required -->
+            <div class="form-group">
+                <label for="blogContent">Blog Content <span class="required">*</span></label>
+                <textarea id="blogContent" name="blogContent"
+                    placeholder="Write your content here… Pour your thoughts, share your insights, tell your story."
+                    required></textarea>
+                <span class="helper-text">Minimum 25 characters • Express yourself freely</span>
+            </div>
+
+            <!-- Question 3f: Checkbox and label for terms and conditions -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms">
+                <label for="terms">I agree to the terms and conditions. We respect your creativity and privacy.</label>
+            </div>
+
+            <!-- Question 3g: Submit button -->
+            <button type="submit">Publish Blog</button>
+        </form>
+    </div>
+
+    <!-- Question 4: Script tag to link JavaScript code -->
+    <script src="script.js"></script>
+</body>
+
+</html>
