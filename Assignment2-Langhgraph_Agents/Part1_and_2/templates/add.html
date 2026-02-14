@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book - Book Library</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: url('/static/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255, 252, 245, 0.94);
+            border-radius: 12px;
+            padding: 45px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(139, 90, 43, 0.2);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #4a3728;
+            margin-bottom: 35px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #5a4a3a;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 16px 18px;
+            border: 2px solid #c9b896;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+            background: rgba(255, 255, 255, 0.8);
+            color: #4a3728;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #8b5a2b;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.1);
+        }
+
+        input[type="text"]::placeholder {
+            color: #a0937d;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #5a7a6b 0%, #4a6a5b 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #4a6a5b 0%, #3a5a4b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 122, 107, 0.35);
+        }
+
+        .btn-secondary {
+            background: rgba(139, 90, 43, 0.1);
+            color: #5a4a3a;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(139, 90, 43, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add New Book</h1>
+
+        <form action="/add" method="post">
+            <div class="form-group">
+                <label for="title">Book Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter book title..." required>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author Name</label>
+                <input type="text" id="author" name="author" placeholder="Enter author name..." required>
+            </div>
+
+            <div class="btn-group">
+                <a href="/" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-primary">Add Book</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
